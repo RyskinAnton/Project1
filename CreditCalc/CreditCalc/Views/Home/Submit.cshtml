@@ -1,0 +1,26 @@
+﻿@model CreditCalc.Models.CalcData
+
+@{
+    ViewBag.Title = "Результат";
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+
+<html>
+
+<body>
+    @using (Html.BeginForm())
+    {
+        <center><h2>Результат вычислений</h2></center>
+        <div align="center">
+            <table>
+                <tr><td><b>Сумма ежемесячного платежа составит:</b></td> <td> <b>@Math.Round(Model.MonPay,2) рублей</b></td></tr>
+                <tr><td><b>Переплата по кредиту сосотавит:</b></td> <td><b> @Math.Round(Model.OverPay, 2) рублей</b></td></tr>
+                <tr><td><b>Выплата за весь период кредитования:</b></td> <td><b>@Math.Round(Model.FullPay,2) рублей</b></td></tr>
+            </table>
+        </div>
+    }
+    <div>
+    </div>
+</body>
+</html>
+
